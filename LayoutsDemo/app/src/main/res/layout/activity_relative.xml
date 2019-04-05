@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativeActivity">
+    <Button
+        android:id="@+id/button1"
+        android:background="#ccb9bc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:background="#cb9ca1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button1"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:background="#ba6b6c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button2"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:background="#af8eb5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button5"
+        />
+
+    <Button
+        android:id="@+id/button5"
+        android:background="#9c64a6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/button6"
+        android:background="#883997"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button5"/>
+    <Button
+        android:id="@+id/button7"
+        android:background="#5d99c6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button8"/>
+    <Button
+        android:id="@+id/button8"
+        android:background="#2286c3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button9"/>
+
+    <Button
+        android:id="@+id/button9"
+        android:background="#0077c2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+
+
+</RelativeLayout>

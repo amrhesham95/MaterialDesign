@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LayoutsDemo</string>
+    <string name="frame_layout">Frame layout</string>
+    <string name="linear_layout">Linear layout</string>
+    <string name="grid_layout">Grid layout</string>
+    <string name="relative_layout">Relative Layout</string>
+    <string name="constraint_layout">Constraint Layout</string>
+</resources>
