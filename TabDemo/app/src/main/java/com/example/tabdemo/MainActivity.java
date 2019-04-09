@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.view.View;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
     PagerAdapter pagerAdapter;
     ViewPager viewPager;
     TabLayout tabLayout;
@@ -19,7 +19,9 @@ public class MainActivity extends FragmentActivity {
         pagerAdapter=new PagerAdapter(getSupportFragmentManager());
         viewPager=findViewById(R.id.viewPagerID);
         viewPager.setAdapter(pagerAdapter);
+        //viewPager.beginFakeDrag();
         tabLayout.setupWithViewPager(viewPager);
+
 
     }
 }
