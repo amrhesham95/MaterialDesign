@@ -1,5 +1,10 @@
 package com.example.navigationdrawerdemo;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
+import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -52,11 +57,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         // set item as selected to persist highlight
                         menuItem.setChecked(true);
                         // close drawer when item is tapped
+                        final Bundle bundle= ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle();
+                        Intent intent =new Intent(getApplicationContext(),ActivityTwo.class);
+                        startActivity(intent,bundle);
                         drawerLayout.closeDrawers();
 
                         // Add code here to update the UI based on the item selected
@@ -96,6 +105,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
+
+
+
 
     }
 
