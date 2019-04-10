@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 
@@ -27,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton fab;
+    private FloatingActionButton fab2;
     private TranslateAnimation translateAnimation;
+    private Animation scale;
     Map<String,Integer> dataset;
     private String[] names={"bird","cow","elephant","dog"};
 
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        scale= AnimationUtils.loadAnimation(this,R.anim.surface);
         initDataset();
         recyclerView =findViewById(R.id.recyclerViewID);
         recyclerView.setHasFixedSize(true);
@@ -66,10 +70,12 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
         fab=findViewById(R.id.fab);
+        fab2=findViewById(R.id.fab2);
         translateAnimation=new TranslateAnimation(0,-480,0,0);
         translateAnimation.setDuration(500);
         translateAnimation.setRepeatCount(1);
         translateAnimation.setRepeatMode(Animation.REVERSE);
+        translateAnimation.setStartOffset(500);
         //TranslateAnimation (int fromXType,
         //                float fromXValue,
         //                int toXType,
@@ -80,7 +86,15 @@ public class MainActivity extends AppCompatActivity {
         //                float toYValue)
 
         fab.setOnClickListener((event)->{
+
             fab.startAnimation(translateAnimation);
+
+        });
+
+        fab2.setOnClickListener((event)->{
+            fab2.startAnimation(scale);
+
+
         });
 
     }
